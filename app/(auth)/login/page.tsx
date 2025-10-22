@@ -7,6 +7,23 @@ import { ticmark } from '@/public/SVG/DashbaordSvg'
 import { useDispatch, useSelector } from 'react-redux'
 import { handleRememberMe } from '@/app/features/login/rememberme'
 import Link from 'next/link'
+import { UserService } from '@/userservice/user.service'
+import { CookieHelper } from '@/helper/cookie.helper'
+import { useRouter } from 'next/navigation'
+import { IoEyeOutline } from "react-icons/io5";
+import { IoEyeOffOutline } from "react-icons/io5";
+import { useState } from 'react'
+import { Roboto } from 'next/font/google'
+import toast,{Toaster} from 'react-hot-toast'
+
+
+export const roboto = Roboto({
+    subsets: ['latin'],
+    variable: '--font-roboto',
+    weight: ['100', '300', '400', '500', '700', '900'],
+    display: 'swap',
+})
+
 
 interface FormData {
     email: string;
@@ -15,14 +32,23 @@ interface FormData {
 
 export default function LoginPage() {
     const { handleSubmit, register, reset, formState: { errors, isSubmitting } } = useForm<FormData>();
+    const router = useRouter();
     const rememberMe = useSelector((state: any) => state?.rememberMe);
     const dispatch = useDispatch();
+    const [showPass, setShowPass] = useState(false);
 
     const onSubmit = async (data: FormData) => {
-        console.log(data);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log('Login successful!');
+        try {
+            const res = await UserService?.login({ email: data?.email, password: data?.password });
+            console.log(res);
+            if (res?.data?.success) {
+                CookieHelper.set({ key: 'token', value: res?.data?.token })
+                router.replace('/dashboard')
+            }
+        } catch (err) {
+            console.log(err);
+            toast.error('Incorrect user or password');
+        }
         reset();
     }
 
@@ -32,20 +58,21 @@ export default function LoginPage() {
 
     return (
         <div className='h-screen w-screen flex bg-white p-6'>
+            <Toaster position='top-right'/>
             <div className='flex-1 h-full flex items-center justify-center bg-[#E8F1FD] rounded-l-[30px]'>
                 <Image alt='Logo' src={logo} width={500} height={500} className='object-cover' />
             </div>
             <div className='flex-1 h-full flex items-center justify-center bg-[#F1F7F4] rounded-r-[30px]'>
-                <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md space-y-[30px] px-8 bg-white p-[32px] rounded-[20px]'>
-                    <div className='text-center mb-8'>
-                        <h1 className='text-3xl font-bold text-gray-900 mb-2'>Welcome Back</h1>
-                        <p className='text-gray-600'>Please enter your details to sign in</p>
+                <form onSubmit={handleSubmit(onSubmit)} className='w-full max-w-md space-y-[30px] px-8 bg-white p-[32px] rounded-[20px]' style={{ boxShadow: "0 6px 12px 0 rgba(106, 115, 129, 0.16), 0 3px 8px 0 rgba(87, 102, 117, 0.06)" }}>
+                    <div className='mb-8'>
+                        <h1 className={`text-[28px] font-medium text-[#16151C] ${roboto.variable} font-sans`}>Welcome 👋</h1>
+                        <p className='text-[#A2A1A8] font-light'>Please login here</p>
                     </div>
 
                     <div className='space-y-[20px]'>
                         {/* Email Field */}
-                        <div className='space-y-2'>
-                            <label htmlFor='email' className='block text-sm font-medium text-gray-700'>
+                        <div className='border border-[#006EC4]  px-4 py-2 rounded-[10px]'>
+                            <label htmlFor='email' className='block text-[12px] font-medium text-[#006EC4]'>
                                 Email Address
                             </label>
                             <input
@@ -58,7 +85,7 @@ export default function LoginPage() {
                                         message: 'Invalid email address'
                                     }
                                 })}
-                                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200'
+                                className='w-full rounded-lg outline-none transition duration-200 text-[#16151C]'
                                 placeholder='Enter your email'
                             />
                             {errors.email && (
@@ -67,23 +94,36 @@ export default function LoginPage() {
                         </div>
 
                         {/* Password Field */}
-                        <div className='space-y-2'>
-                            <label htmlFor='password' className='block text-sm font-medium text-gray-700'>
-                                Password
-                            </label>
-                            <input
-                                id='password'
-                                type='password'
-                                {...register('password', {
-                                    required: 'Password is required',
-                                    minLength: {
-                                        value: 6,
-                                        message: 'Password must be at least 6 characters'
-                                    }
-                                })}
-                                className='w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition duration-200'
-                                placeholder='Enter your password'
-                            />
+                        <div>
+                            <div className='border border-[#006EC4]  px-4 py-2 rounded-[10px] flex justify-between items-center'>
+                                <div>
+                                    <label htmlFor='password' className='block text-[12px] font-medium text-[#006EC4]'>
+                                        Password
+                                    </label>
+                                    <input
+                                        id='password'
+                                        type={`${showPass?"text":"password"}`}
+                                        {...register('password', {
+                                            required: 'Password is required',
+                                            minLength: {
+                                                value: 6,
+                                                message: 'Password must be at least 6 characters'
+                                            }
+                                        })}
+                                        className='w-full outline-none transition duration-200 text-[#16151C]'
+                                        placeholder='Enter your password'
+                                    />
+                                </div>
+                                {showPass ?
+                                    <button type='button' onClick={()=>setShowPass(prev => !prev)} className='text-xl cursor-pointer'>
+                                        <IoEyeOutline />
+                                    </button>
+                                    :
+                                    <button type="button" onClick={()=>setShowPass(prev => !prev)} className='text-xl cursor-pointer'>
+                                        <IoEyeOffOutline />
+                                    </button>
+                                }
+                            </div>
                             {errors.password && (
                                 <p className='text-red-500 text-sm mt-1'>{errors.password.message}</p>
                             )}
@@ -115,7 +155,8 @@ export default function LoginPage() {
                     <button
                         type='submit'
                         disabled={isSubmitting}
-                        className='w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed font-medium'
+                        className='w-full font-light bg-blue-600 text-white py-3 px-4 rounded-lg
+                         cursor-pointer hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed'
                     >
                         {isSubmitting ? 'Loggin in...' : 'Login'}
                     </button>

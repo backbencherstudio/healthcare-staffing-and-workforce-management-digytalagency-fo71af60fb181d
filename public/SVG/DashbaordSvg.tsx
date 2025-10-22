@@ -73,3 +73,70 @@ export const ticmark = (
         <path d="M0.535706 5.89328L3.03571 8.39328L10.5357 0.536133" stroke="white" stroke-width="1.07143" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 )
+
+
+export const leftAngle = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+        <path d="M6.54285 0.75L1.24995 6.04289C0.91662 6.37623 0.749953 6.54289 0.749953 6.75C0.749953 6.95711 0.91662 7.12377 1.24995 7.45711L6.54285 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const multiAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M17.3333 14.6663C17.3333 11.7208 14.9454 9.33301 12 9.33301C9.05444 9.33301 6.66663 11.7208 6.66663 14.6663C6.66663 17.6118 9.05444 19.9997 12 19.9997C14.9454 19.9997 17.3333 17.6118 17.3333 14.6663Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M14.7181 10.077C14.6841 9.83396 14.6666 9.58569 14.6666 9.33333C14.6666 6.38781 17.0545 4 20 4C22.9454 4 25.3333 6.38781 25.3333 9.33333C25.3333 12.2789 22.9454 14.6667 20 14.6667C19.0072 14.6667 18.0778 14.3955 17.2818 13.9231" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20 28C20 23.5817 16.4183 20 12 20C7.58172 20 4 23.5817 4 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M28 22.667C28 18.2487 24.4183 14.667 20 14.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const graphIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M10.6667 22.667V18.667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16 18.6667V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M21.3333 12V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M26.6667 13.333V5.33301" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 4V18.6667C4 23.0664 4 25.2663 5.36684 26.6332C6.73367 28 8.93356 28 13.3333 28H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+)
+
+export const singlePageIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M17.3333 28.667V28.0003C17.3333 24.2291 17.3333 22.3435 18.5049 21.1719C19.6765 20.0003 21.5621 20.0003 25.3333 20.0003H26M26.6666 17.7911V13.3337C26.6666 8.30534 26.6666 5.79119 25.1045 4.22909C23.5425 2.66699 21.0282 2.66699 16 2.66699C10.9717 2.66699 8.45751 2.66699 6.89541 4.22909C5.33331 5.79118 5.33331 8.30534 5.33331 13.3337V19.3926C5.33331 23.7193 5.33331 25.8826 6.51474 27.3479C6.75342 27.6439 7.02306 27.9135 7.31909 28.1522C8.78439 29.3337 10.9477 29.3337 15.2744 29.3337C16.2152 29.3337 16.6854 29.3337 17.1162 29.1817C17.2058 29.1501 17.2936 29.1137 17.3793 29.0727C17.7914 28.8755 18.124 28.543 18.7892 27.8778L25.1045 21.5625C25.8753 20.7917 26.2606 20.4063 26.4637 19.9162C26.6666 19.4262 26.6666 18.8811 26.6666 17.7911Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const clockIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 29.3337C23.3638 29.3337 29.3333 23.3641 29.3333 16.0003C29.3333 8.63653 23.3638 2.66699 16 2.66699C8.63619 2.66699 2.66666 8.63653 2.66666 16.0003C2.66666 23.3641 8.63619 29.3337 16 29.3337Z" stroke="currentColor" stroke-width="2" />
+        <path d="M16 10.667V16.0003L18.6667 18.667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const activeAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M20 10.6667C20 6.98477 17.0152 4 13.3333 4C9.65144 4 6.66667 6.98477 6.66667 10.6667C6.66667 14.3485 9.65144 17.3333 13.3333 17.3333C17.0152 17.3333 20 14.3485 20 10.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 26.6663C4 21.5117 8.17868 17.333 13.3333 17.333C15.9449 17.333 18.306 18.4057 20 20.1343" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17.3333 24.6667C17.3333 24.6667 19.1313 25.3423 20 28C20 28 24.2353 21.3333 28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const suspendedAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M19.3333 10.6667C19.3333 6.98477 16.3485 4 12.6667 4C8.98477 4 6 6.98477 6 10.6667C6 14.3485 8.98477 17.3333 12.6667 17.3333C16.3485 17.3333 19.3333 14.3485 19.3333 10.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20.6667 28L24.6667 24M24.6667 24L28.6667 20M24.6667 24L20.6667 20M24.6667 24L28.6667 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M3.33333 26.6663C3.33333 21.5117 7.51201 17.333 12.6667 17.333C14.3667 17.333 15.9605 17.7875 17.3333 18.5817" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const warningIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M18.5664 28H13.4336C7.25968 28 4.17273 28 3.03515 25.9919C1.89756 23.9839 3.47648 21.3219 6.63432 15.998L9.20076 11.6711C12.2341 6.55704 13.7508 4 16 4C18.2492 4 19.7659 6.55703 22.7992 11.6711L25.3657 15.998C28.5235 21.3219 30.1024 23.9839 28.9648 25.9919C27.8272 28 24.7403 28 18.5664 28Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16 12V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16 22.6562V22.6696" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)

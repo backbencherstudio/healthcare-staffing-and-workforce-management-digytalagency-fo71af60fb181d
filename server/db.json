@@ -2,10 +2,36 @@
   "users": [
     {
       "id": 1,
-      "email": "mathias@example.com",
-      "password": "password123",
+      "email": "admin@gmail.com",
+      "password": "12345678",
       "name": "Mathias W.",
       "role": "Store Manager"
+    }
+  ],
+  "tokens": [
+    {
+      "token": "fake-jwt-token-1761114098747-1",
+      "userId": 1,
+      "createdAt": "2025-10-22T06:21:38.748Z",
+      "expiresAt": "2025-10-23T06:21:38.748Z"
+    }
+  ],
+  "dashbaordStats": [
+    {
+      "label": "active_hcps",
+      "value": "450"
+    },
+    {
+      "label": "fill_rate",
+      "value": "1000"
+    },
+    {
+      "label": "pending_timesheet",
+      "value": "0"
+    },
+    {
+      "label": "total_hours_booked",
+      "value": "440"
     }
   ]
 }

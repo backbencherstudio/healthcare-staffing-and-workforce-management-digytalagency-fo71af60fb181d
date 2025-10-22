@@ -4,6 +4,12 @@ import "./globals.css";
 import store from "./reduxStore/store";
 import { Provider } from "react-redux";
 import MainLayout from "./_components/MainLayout";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+    subsets: ['latin'],
+    variable: '--font-inter',
+})
 
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -30,8 +36,8 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <div className="h-screen w-screen overflow-hidden flex items-center justify-center">
-                    <div className="h-full w-full max-w-[1920px]">
+                <div className="h-screen w-screen overflow-hidden flex justify-center">
+                    <div className={`h-full w-full max-w-[1920px] ${inter.variable} font-sans`}>
                         <MainLayout>
                             {children}
                         </MainLayout>

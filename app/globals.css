@@ -24,3 +24,17 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1500px) {
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    grid-template-rows: auto;
+  }
+}

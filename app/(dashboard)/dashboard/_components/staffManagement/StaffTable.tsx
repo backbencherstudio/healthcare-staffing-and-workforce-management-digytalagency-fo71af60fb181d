@@ -13,7 +13,8 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select"
+} from "@/components/ui/select";
+import { useRouter } from "next/navigation";
 
 type staff = {
     id: string;
@@ -32,6 +33,7 @@ export default function StaffTable({ data }: { data: staff[] }) {
     const handleAccountStatusChange=(value:string)=>{
         setSelectedAccountStatus(value);
     }
+    const router = useRouter();
     const columns = [
         {
             label: "Name",
@@ -159,7 +161,7 @@ export default function StaffTable({ data }: { data: staff[] }) {
             width: "160px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center justify-end gap-2 p-4'>
-                    <button type="button" className="p-[10px] flex items-center justify-center leading-0 bg-[#FEB000] rounded-lg text-white cursor-pointer">
+                    <button type="button" onClick={()=>router.push(`/dashboard/staff_management/${row?.id}`)} className="p-[10px] flex items-center justify-center leading-0 bg-[#FEB000] rounded-lg text-white cursor-pointer">
                         {openEye}
                     </button>
                     <button type="button" className="p-[10px] flex items-center justify-center leading-0 bg-[#E03137] rounded-lg text-white cursor-pointer">

@@ -41,5 +41,32 @@ export const UserService = {
             },
         };
         return await Fetch.post('/logout', { userid: id }, config);
-    }
+    },
+    getStaffStatus: async () => {
+        const userToken = CookieHelper.get({ key: "token" });
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        return await Fetch.get('/staffStatus', config);
+    },
+    getStaffData: async () => {
+        const userToken = CookieHelper.get({ key: "token" });
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        return await Fetch.get('/staffData', config);
+    },
+    getCertificates: async ({id}:{id?:string}) => {
+        const userToken = CookieHelper.get({ key: "token" });
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        return await Fetch.get('/certificates', config);
+    },
 }

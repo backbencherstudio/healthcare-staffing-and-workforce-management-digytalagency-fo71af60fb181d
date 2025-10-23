@@ -1,5 +1,5 @@
 "use client";
- 
+
 import Image from "next/image";
 import React from "react";
 import {
@@ -7,7 +7,7 @@ import {
   HiOutlineChevronUp,
   HiOutlineSelector,
 } from "react-icons/hi";
- 
+
 interface ColumnConfig {
   label: React.ReactNode;
   width: any;
@@ -15,12 +15,12 @@ interface ColumnConfig {
   sortable?: boolean;
   formatter?: (value: any, row: any) => React.ReactNode;
 }
- 
+
 interface SortConfig {
   key: string;
   direction: "ascending" | "descending";
 }
- 
+
 interface DynamicTableProps {
   columns: ColumnConfig[];
   data: any[];
@@ -33,30 +33,35 @@ interface DynamicTableProps {
   sortConfig?: SortConfig | null;
   onSort?: (key: string) => void;
   header?: {
-    bg?:string;
+    bg?: string;
     padding?: string;
-  }
+    text?: string;
+  },
+  tableMinWidth?: string;
+  tableMaxWidth?: string;
 }
- 
+
 export default function DynamicTable({
   columns,
   data,
-  currentPage=0,
+  currentPage = 0,
   itemsPerPage,
-  onPageChange=()=>{},
+  onPageChange = () => { },
   onView,
   onDelete,
   noDataMessage = "No data found.",
   sortConfig,
   onSort,
-  header
+  header,
+  tableMinWidth = "1000px",
+  tableMaxWidth = '300px'
 }: DynamicTableProps) {
-  const totalPages = itemsPerPage?Math.ceil(data.length / itemsPerPage):0;
-  const paginatedData = itemsPerPage?data.slice(
+  const totalPages = itemsPerPage ? Math.ceil(data.length / itemsPerPage) : 0;
+  const paginatedData = itemsPerPage ? data.slice(
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
-  ):data;
- 
+  ) : data;
+
   const renderSortIcon = (columnKey: string) => {
     if (!sortConfig || sortConfig.key !== columnKey) {
       return <HiOutlineSelector className="w-5 h-5 text-headerColor" />;
@@ -71,23 +76,27 @@ export default function DynamicTable({
     <div className="h-full">
       {/* Table Wrapper with Border & Radius */}
       <div className="overflow-hidden rounded-t-md h-full">
-        <div className="overflow-x-auto h-full">
-          <table className="min-w-[570px] w-full text-left">
+        <div className="overflow-x-auto h-full w-full max-w-['calc(100vw - 408px)']"
+          style={{
+            maxWidth: 'calc(100vw - var(--sidebar-width))'
+          }}
+        >
+          <table className="w-full text-left">
             <thead className="">
               <tr>
                 {columns.map((col, index) => (
                   <th
                     key={index}
                     style={{ width: col.width || "auto" }}
-                    className="text-[#687588] px-4 py-3 whitespace-nowrap text-base font-medium capitalize  text-descriptionColor border-b border-[#EDEDED]"
-                    // onClick={() =>
-                    //   col.sortable && onSort && onSort(col.accessor)
-                    // }
+                    className="text-[#687588]  py-3 whitespace-nowrap text-base font-medium capitalize  text-descriptionColor border-b border-[#EDEDED]"
+                  // onClick={() =>
+                  //   col.sortable && onSort && onSort(col.accessor)
+                  // }
                   >
                     <div
                       className={`flex items-center gap-1 ${col.sortable ? "cursor-pointer" : ""
                         }`}
-                        style={{background:header?.bg,padding: header?.padding}}
+                      style={{ background: header?.bg, padding: header?.padding,color: header?.text }}
                     >
                       {col.label}
                       {/* {col.sortable && renderSortIcon(col.accessor)} */}
@@ -109,7 +118,7 @@ export default function DynamicTable({
                       <td
                         key={idx}
                         style={{ minWidth: col.width || "auto" }}
-                        className="px-4 py-3 text-[#4a4c56]"
+                        className=" text-[#4a4c56]"
                       >
                         {col.formatter
                           ? col.formatter(row[col.accessor], row)
@@ -154,7 +163,7 @@ export default function DynamicTable({
           </table>
         </div>
       </div>
- 
+
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex justify-between items-center mt-6">

@@ -63,7 +63,7 @@ const GradientBar = ({ id, colors, ...props }: any) => {
 
 const BarChart: React.FC<ChartProps> = ({ data = defaultData }) => {
     return (
-        <div className="w-full h-full bg-[#F8F8FF] p-6 rounded-lg">
+        <div className="w-full h-full bg-[#F8F8FF] p-6 rounded-lg min-h-[300px]">
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6">
                 <h2 className="text-xl font-semibold text-[#383E49] mb-2 sm:mb-0 leading-[30px]">
@@ -72,11 +72,12 @@ const BarChart: React.FC<ChartProps> = ({ data = defaultData }) => {
             </div>
 
             {/* Chart */}
-            <div className="h-full pb-6">
+            <div className="h-full pb-10">
                 <ResponsiveContainer width="100%" height="100%">
                     <RechartsBarChart
                         data={data}
-                        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+                        margin={{ top: 20, bottom: 5,left: -25 }}
+                        className='outline-none'
                     >
                         <CartesianGrid
                             strokeDasharray="3 3"
@@ -103,7 +104,14 @@ const BarChart: React.FC<ChartProps> = ({ data = defaultData }) => {
                                 borderRadius: '8px',
                                 boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                             }}
-                            formatter={(value) => [`${value} staff`, 'Count']}
+                            formatter={(value, name, props) => {
+                                if (name === 'careProvider') {
+                                    return [`${value} Care provider`, 'Count'];
+                                } else if (name === 'agencyStaff') {
+                                    return [`${value} Agency staff`, 'Count'];
+                                }
+                                return [`${value}`, name];
+                            }}
                         />
                         <GradientBar
                             id="careProvider"
@@ -113,7 +121,7 @@ const BarChart: React.FC<ChartProps> = ({ data = defaultData }) => {
                             radius={[40, 40, 0, 0]}
                             className="hover:opacity-80 transition-opacity"
                             barSize={12}
-                            />
+                        />
                         <GradientBar
                             id="agencyStaff"
                             dataKey="agencyStaff"

@@ -38,17 +38,17 @@ export default function LoginPage() {
     const [showPass, setShowPass] = useState(false);
 
     const onSubmit = async (data: FormData) => {
-        try {
-            const res = await UserService?.login({ email: data?.email, password: data?.password });
-            console.log(res);
-            if (res?.data?.success) {
-                CookieHelper.set({ key: 'token', value: res?.data?.token })
+        // try {
+        //     const res = await UserService?.login({ email: data?.email, password: data?.password });
+        //     console.log(res);
+        //     if (res?.data?.success) {
+                // CookieHelper.set({ key: 'token', value: res?.data?.token })
                 router.replace('/dashboard')
-            }
-        } catch (err) {
-            console.log(err);
-            toast.error('Incorrect user or password');
-        }
+        //     }
+        // } catch (err) {
+        //     console.log(err);
+        //     toast.error('Incorrect user or password');
+        // }
         reset();
     }
 

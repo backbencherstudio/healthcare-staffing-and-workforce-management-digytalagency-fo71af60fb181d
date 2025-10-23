@@ -34,17 +34,15 @@ const data = [
 const notificationData=[
     {
         title: "Staff Performance Alerts",
-        desc: "You have **1** staff members rated below 3 stars needing immediate review and follow-up.",
+        desc: "You have **1** staff members rated below 3 stars needing immediate...",
         button: "Review Now",
-        color: "#ef4444a3",
-        bgColor: "#FDECEC"
+        type: "staffPerformance"
     },
     {
         title: "Compliance & Onboarding",
-        desc: "**1** HCP documents are expiring soon. **0** new staff pending approval",
+        desc: "**1** HCP documents are expiring soon. **0** new staff pending...",
         button: "Manage Compliance",
-        color: "#eab308a3",
-        bgColor: "#FDF7E6"
+        type: "compliance"
     },
 ]
 
@@ -52,13 +50,13 @@ const notificationData=[
 export default function Page() {
     return (
         <div className="bg-white w-full h-full p-6 space-y-6">
-            <div className="w-full h-fit dashboard gap-6">
+            <div className="w-full h-fit grid lg:grid-cols-[1fr_350px] gap-6">
                 <div className="flex-1 flex flex-col gap-6 min-h-0">
                     <DashboardStats />
                     <MetricsOverview />
                 </div>
 
-                <div className="min-w-[350px] h-full grid grid-rows-2 gap-6">
+                <div className="min-w-[350px] h-fit min-[1500px]:h-full grid min-[1500px]:grid-rows-2 sm:grid-cols-2 lg:grid-cols-1 gap-6">
                     <div className="min-h-0">
                         <CareProviderCard title="Care Provider" data={data} />
                     </div>
@@ -67,12 +65,12 @@ export default function Page() {
                     </div>
                 </div>
             </div>
-            <div className="flex gap-6 w-full">
-                <div className="flex-1 grid grid-cols-2 gap-6">
+            <div className="flex flex-col-reverse lg:flex-row gap-6 w-full">
+                <div className="flex-1 grid grid-cols-1 gap-6 min-[1500px]:grid-cols-2">
                     <BarChart />
                     <CareProviderList />
                 </div>
-                <div className="w-[370px] space-y-6 grid grid-rows-2">
+                <div className="gap-6 grid h-fit min-[1500px]:h-auto min-[1500px]:grid-rows-2 sm:grid-cols-2 min-[1500px]:grid-cols-1 lg:grid-cols-1">
                     {notificationData?.map(item=>
                         <DashboardNotificationCard data={item}/>
                     )}

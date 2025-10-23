@@ -27,7 +27,7 @@ export default function MetricsOverview() {
     return (
         <div className="bg-[#F4F8FE] py-6 px-[18px] space-y-[27px] rounded-lg">
             <h3 className={`capitalize text-black font-semibold leading-[30px] text-xl ${roboto?.variable} font-sans`}>Key Metrics Overview</h3>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="xl:grid grid-cols-3 flex flex-col gap-4">
                 {data?.map(item =>
                     <MatrixOverviewCard data={item} />
                 )}

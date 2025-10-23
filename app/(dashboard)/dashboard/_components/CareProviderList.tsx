@@ -68,7 +68,7 @@ export default function CareProviderList() {
             </div>
             {/* <div className="w-full h-px" style={{ backgroundColor: 'rgba(162, 161, 168, 0.20)' }}></div> */}
             <div className="h-full">
-                <DynamicTable data={tableData} columns={columns} header={{bg:'white',padding:'16px'}}/>
+                <DynamicTable data={tableData} columns={columns} header={{bg:'white',padding:'16px'}} tableMinWidth="500px"/>
             </div>
         </div>
     )

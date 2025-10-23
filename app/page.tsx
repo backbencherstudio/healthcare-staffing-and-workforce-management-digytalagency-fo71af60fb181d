@@ -9,26 +9,27 @@ export default function page() {
     const router = useRouter();
     const token = CookieHelper?.get({ key: 'token' });
 
-    const getMe = async () => {
-        try {
-            const res = await UserService.me();
-            if (res?.data?.success) {
-                router.replace('/dashboard')
-            } else {
-                router.replace('/login')
-            }
-        } catch (err) {
-            console.log(err);
-            router.replace('/login')
-        }
-    }
+    // const getMe = async () => {
+    //     try {
+    //         const res = await UserService.me();
+    //         if (res?.data?.success) {
+    //             router.replace('/dashboard')
+    //         } else {
+    //             router.replace('/login')
+    //         }
+    //     } catch (err) {
+    //         console.log(err);
+    //         router.replace('/login')
+    //     }
+    // }
 
     useEffect(() => {
-        if(!token){
-            router?.replace('/login');
-            return;
-        }
-        getMe();
+        // if(!token){
+        //     router?.replace('/login');
+        //     return;
+        // }
+        // getMe();
+        router.replace('/dashboard');
     }, [])
     return (
         <div className="w-full h-screen flex items-center justify-center bg-white">

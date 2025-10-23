@@ -5,9 +5,13 @@ import Image from 'next/image'
 import { Dashbaord, settings, shift, staff, client, logout, payroll } from '@/public/SVG/DashbaordSvg'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
-import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { handleMenuChange } from '../features/sidebar/sidebarMenuSlice'
+import { UserService } from '@/userservice/user.service';
+import { useUserContext } from './DashboardLayout'
+import { CookieHelper } from '@/helper/cookie.helper'
+import { handleLogoutChange } from '../features/sidebar/sidebarLogoutSlice'
 
 const routePaths = [
     {
@@ -44,23 +48,35 @@ const routePaths = [
 ]
 
 export default function Sidebar() {
-    const selectedMenu = useSelector((state: any) => state?.sidebarMenu)
+    const selectedMenu = useSelector((state: any) => state?.sidebarMenu);
+    const logoutInfo = useSelector((state: any)=> state?.sidebarLogoutSlice)
+    // const [isLogoutOpen, setIsLogoutOpen] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
     const dispatch = useDispatch();
     const pathname = usePathname();
+    const router = useRouter();
+    const { user, handleSidebar, isSidebarOpen } = useUserContext();
     useEffect(() => {
         if (pathname) {
             dispatch(handleMenuChange(pathname))
         }
-    }, [pathname,dispatch])
+        console.log("Redux : ",logoutInfo)
+    }, [pathname, dispatch])
+
+
+    const handleLogoutModal = () => {
+        dispatch(handleLogoutChange(!logoutInfo?.isLogoutOpen))
+    }
+
     return (
-        <div className="px-6 py-[30px] flex flex-col justify-between h-screen bg-[#E8F1FD]">
+        <div className={`px-6 py-[30px] flex flex-col justify-between h-screen bg-[#E8F1FD] w-fit overflow-y-auto`} onClick={(e)=>{e.stopPropagation()}}>
             <div className='space-y-[32px]'>
                 <div>
                     <Image src={fullLogo} alt='Logo' width={500} height={500} className='w-[232px]' />
                 </div>
                 <div className='space-y-[10px]'>
                     {routePaths?.map(item =>
-                        <Link href={item?.link} key={item?.id} className={`flex items-center gap-4 px-5 py-3 rounded-md duration-300 leading-[24px] capitalize ${item?.link === selectedMenu ? "bg-[#5B9BF4] text-white font-medium" : "text-[#28303F] hover:bg-[#deeaf8]"}`}>
+                        <Link href={item?.link} key={item?.id} onClick={handleSidebar} className={`flex items-center gap-4 px-5 py-3 rounded-md duration-300 leading-[24px] capitalize ${item?.link === selectedMenu ? "bg-[#5B9BF4] text-white font-medium" : "text-[#28303F] hover:bg-[#deeaf8]"}`}>
                             <span>
                                 {item?.Icon}
                             </span>
@@ -70,13 +86,13 @@ export default function Sidebar() {
                 </div>
             </div>
             <div className='space-y-[10px]'>
-                <Link href='/dashboard/settings' className={`flex items-center gap-4 px-5 py-3 rounded-md duration-300 leading-[24px] capitalize ${selectedMenu === "/dashboard/settings" ? "bg-[#5B9BF4] text-white font-medium" : "text-[#28303F] hover:bg-[#deeaf8]"}`}>
+                <Link href='/dashboard/settings' onClick={handleSidebar} className={`flex items-center gap-4 px-5 py-3 rounded-md duration-300 leading-[24px] capitalize ${selectedMenu === "/dashboard/settings" ? "bg-[#5B9BF4] text-white font-medium" : "text-[#28303F] hover:bg-[#deeaf8]"}`}>
                     <span>
                         {settings}
                     </span>
                     <span className={`${selectedMenu === '/dashboard/settings' ? "text-white" : "text-[#16151C] "}`}>Settings</span>
                 </Link>
-                <button type='button' className={`flex items-center w-full cursor-pointer gap-4 px-5 py-3 rounded-md duration-300 leading-[24px] capitalize ${selectedMenu === '/logout' ? "bg-[#5B9BF4] text-white font-medium" : "text-[#28303F] hover:bg-[#deeaf8]"}`}>
+                <button type='button' onClick={()=>{handleLogoutModal();handleSidebar()}} className={`flex items-center w-full cursor-pointer gap-4 px-5 py-3 rounded-md duration-300 leading-[24px] capitalize ${selectedMenu === '/logout' ? "bg-[#5B9BF4] text-white font-medium" : "text-[#28303F] hover:bg-[#deeaf8]"}`}>
                     <span>
                         {logout}
                     </span>

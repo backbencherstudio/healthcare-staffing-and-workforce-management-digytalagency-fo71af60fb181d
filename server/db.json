@@ -2,10 +2,218 @@
   "users": [
     {
       "id": 1,
-      "email": "mathias@example.com",
-      "password": "password123",
+      "email": "admin@gmail.com",
+      "password": "12345678",
       "name": "Mathias W.",
       "role": "Store Manager"
+    }
+  ],
+  "dashbaordStats": [
+    {
+      "label": "active_hcps",
+      "value": "450"
+    },
+    {
+      "label": "fill_rate",
+      "value": "1000"
+    },
+    {
+      "label": "pending_timesheet",
+      "value": "0"
+    },
+    {
+      "label": "total_hours_booked",
+      "value": "440"
+    }
+  ],
+  "staffStatus": [
+    {
+      "id": "1",
+      "key": "total",
+      "title": "Total staff",
+      "count": 14
+    },
+    {
+      "id": "2",
+      "key": "pending",
+      "title": "Pending staff",
+      "count": 868
+    },
+    {
+      "id": "3",
+      "key": "active",
+      "title": "Active staff",
+      "count": 5
+    },
+    {
+      "id": "4",
+      "key": "suspended",
+      "title": "Suspended Staff",
+      "count": 5
+    }
+  ],
+  "staffData":[
+    {
+      "id": "1",
+      "name": "John Smith",
+      "mobile_number": "+1-555-0101",
+      "email": "john.smith@example.com",
+      "primary_role": "Nurse",
+      "right_to_work_status": "Verified",
+      "dob": "1985-03-15",
+      "account_status": "active"
+    },
+    {
+      "id": "2",
+      "name": "Sarah Johnson",
+      "mobile_number": "+1-555-0102",
+      "email": "sarah.johnson@example.com",
+      "primary_role": "Doctor",
+      "right_to_work_status": "Pending Verification",
+      "dob": "1978-07-22",
+      "account_status": "pending"
+    },
+    {
+      "id": "3",
+      "name": "Michael Brown",
+      "mobile_number": "+1-555-0103",
+      "email": "michael.brown@example.com",
+      "primary_role": "Physician Assistant",
+      "right_to_work_status": "Verified",
+      "dob": "1990-11-30",
+      "account_status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Emily Davis",
+      "mobile_number": "+1-555-0104",
+      "email": "emily.davis@example.com",
+      "primary_role": "Lab Technician",
+      "right_to_work_status": "Not Verified",
+      "dob": "1992-05-14",
+      "account_status": "suspended"
+    },
+    {
+      "id": "5",
+      "name": "Robert Wilson",
+      "mobile_number": "+1-555-0105",
+      "email": "robert.wilson@example.com",
+      "primary_role": "Radiologist",
+      "right_to_work_status": "Verified",
+      "dob": "1983-09-08",
+      "account_status": "active"
+    },
+    {
+      "id": "6",
+      "name": "Lisa Anderson",
+      "mobile_number": "+1-555-0106",
+      "email": "lisa.anderson@example.com",
+      "primary_role": "Pharmacist",
+      "right_to_work_status": "Pending Verification",
+      "dob": "1988-12-25",
+      "account_status": "pending"
+    },
+    {
+      "id": "7",
+      "name": "David Miller",
+      "mobile_number": "+1-555-0107",
+      "email": "david.miller@example.com",
+      "primary_role": "Surgeon",
+      "right_to_work_status": "Verified",
+      "dob": "1975-02-18",
+      "account_status": "active"
+    },
+    {
+      "id": "8",
+      "name": "Jennifer Taylor",
+      "mobile_number": "+1-555-0108",
+      "email": "jennifer.taylor@example.com",
+      "primary_role": "Nurse Practitioner",
+      "right_to_work_status": "Verified",
+      "dob": "1987-06-11",
+      "account_status": "active"
+    },
+    {
+      "id": "9",
+      "name": "Christopher Lee",
+      "mobile_number": "+1-555-0109",
+      "email": "christopher.lee@example.com",
+      "primary_role": "Anesthesiologist",
+      "right_to_work_status": "Expired",
+      "dob": "1980-04-03",
+      "account_status": "suspended"
+    },
+    {
+      "id": "10",
+      "name": "Amanda White",
+      "mobile_number": "+1-555-0110",
+      "email": "amanda.white@example.com",
+      "primary_role": "Medical Assistant",
+      "right_to_work_status": "Pending Verification",
+      "dob": "1995-08-29",
+      "account_status": "pending"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "BLS Healthcare Provider",
+      "printDate": "2024-03-15",
+      "expiryDate": "2026-03-15",
+      "status": "Verified"
+    },
+    {
+      "name": "ACLS Provider",
+      "printDate": "2023-12-01",
+      "expiryDate": "2025-12-01",
+      "status": "Expired"
+    },
+    {
+      "name": "PALS Certification",
+      "printDate": "2024-02-20",
+      "expiryDate": "2026-02-20",
+      "status": "Pending Verification"
+    },
+    {
+      "name": "RN State License",
+      "printDate": "2024-01-10",
+      "expiryDate": "2025-12-31",
+      "status": "Active"
+    },
+    {
+      "name": "Infection Control Certificate",
+      "printDate": "2023-11-05",
+      "expiryDate": "2024-11-05",
+      "status": "Expiring Soon"
+    },
+    {
+      "name": "Telemetry Certification",
+      "printDate": "2024-04-12",
+      "expiryDate": "2026-04-12",
+      "status": "Approved"
+    },
+    {
+      "name": "Wound Care Specialist",
+      "printDate": "2022-08-30",
+      "expiryDate": "2024-08-30",
+      "status": "Suspended"
+    },
+    {
+      "name": "Oncology Nursing Certification",
+      "printDate": "2024-03-25",
+      "expiryDate": "2026-03-25",
+      "status": "In Review"
+    },
+    {
+      "name": "Medication Administration",
+      "printDate": "2023-10-15",
+      "expiryDate": "2025-10-15",
+      "status": "Active"
+    },
+    {
+      "name": "Emergency Department Nursing",
+      "printDate": "2024-01-08",
+      "expiryDate": "2025-01-08",
+      "status": "Renewal Required"
     }
   ]
 }

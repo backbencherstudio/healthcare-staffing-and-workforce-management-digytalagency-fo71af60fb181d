@@ -55,7 +55,7 @@ export const logout = (
 )
 
 export const notificationBell = (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none">
         <path d="M15.5 18C15.5 19.933 13.933 21.5 12 21.5C10.067 21.5 8.5 19.933 8.5 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M19.2311 18H4.76887C3.79195 18 3 17.208 3 16.2311C3 15.762 3.18636 15.3121 3.51809 14.9803L4.12132 14.3771C4.68393 13.8145 5 13.0514 5 12.2558V9.5C5 5.63401 8.13401 2.5 12 2.5C15.866 2.5 19 5.634 19 9.5V12.2558C19 13.0514 19.3161 13.8145 19.8787 14.3771L20.4819 14.9803C20.8136 15.3121 21 15.762 21 16.2311C21 17.208 20.208 18 19.2311 18Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
@@ -71,5 +71,102 @@ export const searchIcon = (
 export const ticmark = (
     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="9" viewBox="0 0 12 9" fill="none">
         <path d="M0.535706 5.89328L3.03571 8.39328L10.5357 0.536133" stroke="white" stroke-width="1.07143" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const leftAngle = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="8" height="14" viewBox="0 0 8 14" fill="none">
+        <path d="M6.54285 0.75L1.24995 6.04289C0.91662 6.37623 0.749953 6.54289 0.749953 6.75C0.749953 6.95711 0.91662 7.12377 1.24995 7.45711L6.54285 12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const multiAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M17.3333 14.6663C17.3333 11.7208 14.9454 9.33301 12 9.33301C9.05444 9.33301 6.66663 11.7208 6.66663 14.6663C6.66663 17.6118 9.05444 19.9997 12 19.9997C14.9454 19.9997 17.3333 17.6118 17.3333 14.6663Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M14.7181 10.077C14.6841 9.83396 14.6666 9.58569 14.6666 9.33333C14.6666 6.38781 17.0545 4 20 4C22.9454 4 25.3333 6.38781 25.3333 9.33333C25.3333 12.2789 22.9454 14.6667 20 14.6667C19.0072 14.6667 18.0778 14.3955 17.2818 13.9231" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20 28C20 23.5817 16.4183 20 12 20C7.58172 20 4 23.5817 4 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M28 22.667C28 18.2487 24.4183 14.667 20 14.667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const graphIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M10.6667 22.667V18.667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16 18.6667V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M21.3333 12V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M26.6667 13.333V5.33301" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 4V18.6667C4 23.0664 4 25.2663 5.36684 26.6332C6.73367 28 8.93356 28 13.3333 28H28" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+    </svg>
+)
+
+export const singlePageIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M17.3333 28.667V28.0003C17.3333 24.2291 17.3333 22.3435 18.5049 21.1719C19.6765 20.0003 21.5621 20.0003 25.3333 20.0003H26M26.6666 17.7911V13.3337C26.6666 8.30534 26.6666 5.79119 25.1045 4.22909C23.5425 2.66699 21.0282 2.66699 16 2.66699C10.9717 2.66699 8.45751 2.66699 6.89541 4.22909C5.33331 5.79118 5.33331 8.30534 5.33331 13.3337V19.3926C5.33331 23.7193 5.33331 25.8826 6.51474 27.3479C6.75342 27.6439 7.02306 27.9135 7.31909 28.1522C8.78439 29.3337 10.9477 29.3337 15.2744 29.3337C16.2152 29.3337 16.6854 29.3337 17.1162 29.1817C17.2058 29.1501 17.2936 29.1137 17.3793 29.0727C17.7914 28.8755 18.124 28.543 18.7892 27.8778L25.1045 21.5625C25.8753 20.7917 26.2606 20.4063 26.4637 19.9162C26.6666 19.4262 26.6666 18.8811 26.6666 17.7911Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const clockIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 29.3337C23.3638 29.3337 29.3333 23.3641 29.3333 16.0003C29.3333 8.63653 23.3638 2.66699 16 2.66699C8.63619 2.66699 2.66666 8.63653 2.66666 16.0003C2.66666 23.3641 8.63619 29.3337 16 29.3337Z" stroke="currentColor" stroke-width="2" />
+        <path d="M16 10.667V16.0003L18.6667 18.667" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const activeAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M20 10.6667C20 6.98477 17.0152 4 13.3333 4C9.65144 4 6.66667 6.98477 6.66667 10.6667C6.66667 14.3485 9.65144 17.3333 13.3333 17.3333C17.0152 17.3333 20 14.3485 20 10.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4 26.6663C4 21.5117 8.17868 17.333 13.3333 17.333C15.9449 17.333 18.306 18.4057 20 20.1343" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M17.3333 24.6667C17.3333 24.6667 19.1313 25.3423 20 28C20 28 24.2353 21.3333 28 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const suspendedAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M19.3333 10.6667C19.3333 6.98477 16.3485 4 12.6667 4C8.98477 4 6 6.98477 6 10.6667C6 14.3485 8.98477 17.3333 12.6667 17.3333C16.3485 17.3333 19.3333 14.3485 19.3333 10.6667Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M20.6667 28L24.6667 24M24.6667 24L28.6667 20M24.6667 24L20.6667 20M24.6667 24L28.6667 28" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M3.33333 26.6663C3.33333 21.5117 7.51201 17.333 12.6667 17.333C14.3667 17.333 15.9605 17.7875 17.3333 18.5817" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+
+export const warningIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M18.5664 28H13.4336C7.25968 28 4.17273 28 3.03515 25.9919C1.89756 23.9839 3.47648 21.3219 6.63432 15.998L9.20076 11.6711C12.2341 6.55704 13.7508 4 16 4C18.2492 4 19.7659 6.55703 22.7992 11.6711L25.3657 15.998C28.5235 21.3219 30.1024 23.9839 28.9648 25.9919C27.8272 28 24.7403 28 18.5664 28Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16 12V18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M16 22.6562V22.6696" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const documentIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M5.33334 11.334H10.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M5.33334 8.66602H8.00001" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M8.66666 1.66732V2.00065C8.66666 3.88627 8.66666 4.82908 9.25246 5.41486C9.83826 6.00065 10.7811 6.00065 12.6667 6.00065H13M13.3333 7.10525V9.33398C13.3333 11.8481 13.3333 13.1053 12.5523 13.8863C11.7713 14.6673 10.5141 14.6673 7.99999 14.6673C5.48583 14.6673 4.22876 14.6673 3.4477 13.8863C2.66666 13.1053 2.66666 11.8481 2.66666 9.33398V6.30454C2.66666 4.1412 2.66666 3.05952 3.25737 2.32687C3.37671 2.17886 3.51153 2.04404 3.65954 1.9247C4.3922 1.33398 5.47387 1.33398 7.63719 1.33398C8.10759 1.33398 8.34272 1.33398 8.55812 1.40999C8.60292 1.4258 8.64679 1.44398 8.68966 1.46448C8.89572 1.56302 9.06199 1.72932 9.39459 2.0619L12.5523 5.2196C12.9377 5.60498 13.1303 5.79766 13.2319 6.04269C13.3333 6.28772 13.3333 6.56022 13.3333 7.10525Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+)
+
+export const openEye = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M8 6.1138C6.95615 6.1138 6.11334 6.95661 6.11334 8.00047C6.11334 9.04433 6.95615 9.88714 8 9.88714C9.04386 9.88714 9.88667 9.04433 9.88667 8.00047C9.88667 6.95661 9.04386 6.1138 8 6.1138ZM5.11334 8.00047C5.11334 6.40433 6.40386 5.1138 8 5.1138C9.59615 5.1138 10.8867 6.40433 10.8867 8.00047C10.8867 9.59661 9.59615 10.8871 8 10.8871C6.40386 10.8871 5.11334 9.59661 5.11334 8.00047Z" fill="currentColor" />
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M1.505 5.99845C3.09894 3.49287 5.43468 1.98047 8 1.98047C10.5654 1.98047 12.9013 3.493 14.4952 5.99877C14.8585 6.56833 15.0233 7.29791 15.0233 7.99714C15.0233 8.69636 14.8585 9.42594 14.4952 9.9955C12.9013 12.5013 10.5654 14.0138 8 14.0138C5.43457 14.0138 3.09874 12.5013 1.50479 9.9955C1.14147 9.42594 0.976669 8.69636 0.976669 7.99714C0.976669 7.29777 1.14154 6.56805 1.505 5.99845ZM8 2.98047C5.85877 2.98047 3.80793 4.24127 2.34855 6.5355L2.34813 6.53615C2.11174 6.9065 1.97667 7.43663 1.97667 7.99714C1.97667 8.55764 2.11174 9.08777 2.34813 9.45812L2.34855 9.45877C3.80793 11.753 5.85877 13.0138 8 13.0138C10.1412 13.0138 12.1921 11.753 13.6515 9.45877L13.6519 9.45812C13.8883 9.08777 14.0233 8.55764 14.0233 7.99714C14.0233 7.43663 13.8883 6.9065 13.6519 6.53615L13.6515 6.5355C12.1921 4.24127 10.1412 2.98047 8 2.98047Z" fill="currentColor" />
+    </svg>
+)
+
+
+export const deleteIcon = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M6.66667 2.5C6.62247 2.5 6.58008 2.51756 6.54882 2.54882C6.51756 2.58007 6.5 2.62246 6.5 2.66667V4.16667H9.5V2.66667C9.5 2.62246 9.48244 2.58007 9.45119 2.54882C9.41993 2.51756 9.37754 2.5 9.33334 2.5H6.66667ZM3.87674 5.16667L4.49828 12.6251C4.49943 12.639 4.50001 12.6528 4.50001 12.6667C4.50001 12.8877 4.5878 13.0996 4.74408 13.2559C4.90036 13.4122 5.11232 13.5 5.33334 13.5H10.6667C10.8877 13.5 11.0996 13.4122 11.2559 13.2559C11.4122 13.0996 11.5 12.8877 11.5 12.6667C11.5 12.6528 11.5006 12.639 11.5017 12.6251L12.1233 5.16667H3.87674ZM13.1267 5.16667L12.4999 12.6891C12.494 13.1672 12.3016 13.6245 11.963 13.963C11.6192 14.3068 11.1529 14.5 10.6667 14.5H5.33334C4.84711 14.5 4.38079 14.3068 4.03698 13.963C3.69845 13.6245 3.50599 13.1672 3.50014 12.6891L2.87327 5.16667H2.66667C2.39053 5.16667 2.16667 4.94281 2.16667 4.66667C2.16667 4.39052 2.39053 4.16667 2.66667 4.16667H5.5V2.66667C5.5 2.35725 5.62292 2.0605 5.84171 1.84171C6.06051 1.62292 6.35725 1.5 6.66667 1.5H9.33334C9.64276 1.5 9.9395 1.62292 10.1583 1.84171C10.3771 2.0605 10.5 2.35725 10.5 2.66667V4.16667H13.3333C13.6095 4.16667 13.8333 4.39052 13.8333 4.66667C13.8333 4.94281 13.6095 5.16667 13.3333 5.16667H13.1267ZM6.66667 6.83333C6.94281 6.83333 7.16667 7.05719 7.16667 7.33333V11.3333C7.16667 11.6095 6.94281 11.8333 6.66667 11.8333C6.39053 11.8333 6.16667 11.6095 6.16667 11.3333V7.33333C6.16667 7.05719 6.39053 6.83333 6.66667 6.83333ZM9.33334 6.83333C9.60948 6.83333 9.83334 7.05719 9.83334 7.33333V11.3333C9.83334 11.6095 9.60948 11.8333 9.33334 11.8333C9.0572 11.8333 8.83334 11.6095 8.83334 11.3333V7.33333C8.83334 7.05719 9.0572 6.83333 9.33334 6.83333Z" fill="currentColor" />
+    </svg>
+)
+
+
+export const singleAvatar = (
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none">
+        <path d="M17 8.5C17 5.73858 14.7614 3.5 12 3.5C9.23858 3.5 7 5.73858 7 8.5C7 11.2614 9.23858 13.5 12 13.5C14.7614 13.5 17 11.2614 17 8.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M19 20.5C19 16.634 15.866 13.5 12 13.5C8.13401 13.5 5 16.634 5 20.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
     </svg>
 )

@@ -2,7 +2,7 @@
 
 import DynamicTable from "@/helper/DynamicTable";
 import { useEffect, useState } from "react";
-import avatar from '@/public/images/avatar.png';
+// import avatar from '@/public/images/avatar.png';
 import Image from "next/image";
 import { documentIcon } from "@/public/SVG/DashbaordSvg";
 import { openEye } from "@/public/SVG/DashbaordSvg";
@@ -47,16 +47,16 @@ export default function StaffTable({ data }: { data: staff[] }) {
                 </div>
             )
         },
-        {
-            label: "Image",
-            accessor: "image",
-            width: "80px",
-            formatter: (_: any, row: any) => (
-                <div className='flex items-center gap-2 p-4'>
-                    <Image src={avatar} alt={row?.name} width={500} height={500} className="w-[48px] h-[48px] rounded-full object-cover" />
-                </div>
-            )
-        },
+        // {
+        //     label: "Image",
+        //     accessor: "image",
+        //     width: "80px",
+        //     formatter: (_: any, row: any) => (
+        //         <div className='flex items-center gap-2 p-4'>
+        //             <Image src={avatar} alt={row?.name} width={500} height={500} className="w-[48px] h-[48px] rounded-full object-cover" />
+        //         </div>
+        //     )
+        // },
         {
             label: "Mobile Number",
             accessor: "mobile_number",

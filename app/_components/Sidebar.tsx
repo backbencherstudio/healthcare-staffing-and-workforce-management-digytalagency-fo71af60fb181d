@@ -80,7 +80,7 @@ export default function Sidebar() {
                             <span>
                                 {item?.Icon}
                             </span>
-                            <span className={`${item?.link === selectedMenu ? "text-white" : "text-[#16151C] "}`}>{item?.name}</span>
+                            <span className={`${item?.link === selectedMenu ? "text-white" : "text-[#16151C] "} text-nowrap`}>{item?.name}</span>
                         </Link>
                     )}
                 </div>

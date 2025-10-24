@@ -1,7 +1,7 @@
 'use client'
 
 import Image from "next/image"
-import avatar from '@/public/images/user.png'
+// import avatar from '@/public/images/user.png'
 import { singlePageIcon } from "@/public/SVG/DashbaordSvg"
 import { singleAvatar } from "@/public/SVG/DashbaordSvg"
 import StaffDetailsTable from "./StaffDetailsTable"
@@ -44,7 +44,7 @@ export default function StaffDetails({ id }: { id: string }) {
             <div className="p-4 rounded-lg border border-[#CFD2D2] grid grid-cols-3 gap-4">
                 <div className="space-y-4">
                     <div className="flex gap-4">
-                        <Image src={avatar} alt="User avatar" width={500} height={500} className="w-[172px] aspect-square rounded-lg object-cover" />
+                        <Image src="/images/user.png" alt="User avatar" width={500} height={500} className="w-[172px] aspect-square rounded-lg object-cover" />
                         <div className="text-[#2F3131]">
                                 <h3 className="text-2xl capitalize font-semibold leading-[36px]">Jone Doe</h3>
                             <div>

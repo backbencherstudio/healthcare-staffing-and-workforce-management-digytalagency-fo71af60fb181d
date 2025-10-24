@@ -1,6 +1,6 @@
 import { notificationBell } from "@/public/SVG/DashbaordSvg"
 import { searchIcon } from "@/public/SVG/DashbaordSvg"
-import avatar from '@/public/images/user.png'
+// import avatar from '@/public/images/user.png'
 import Image from "next/image"
 import { Lexend } from 'next/font/google'
 import { Roboto } from 'next/font/google'
@@ -69,7 +69,7 @@ export default function Navbar() {
                 </button>
                 <div className="flex items-center gap-3 cursor-default select-none">
                     <div className="rounded-lg">
-                        <Image src={avatar} unoptimized={false} alt="profile image" width={500} height={500} className="w-[48px] h-[48px] object-cover rounded-lg" />
+                        <Image src="/images/user.png" unoptimized={false} alt="profile image" width={500} height={500} className="w-[48px] h-[48px] object-cover rounded-lg" />
                     </div>
                     <div>
                         <h3 className={`text-[#16151C] text-xl font-semibold leading-[30px] capitalize ${roboto.variable} font-sans`}>{user?.name?.split(" ")?.[0] || "Mathias"} {user?.name?.split(" ")?.[1]?.[0] || "W" + '.' || ''}</h3>

@@ -47,16 +47,16 @@ export default function StaffTable({ data }: { data: staff[] }) {
                 </div>
             )
         },
-        // {
-        //     label: "Image",
-        //     accessor: "image",
-        //     width: "80px",
-        //     formatter: (_: any, row: any) => (
-        //         <div className='flex items-center gap-2 p-4'>
-        //             <Image src={avatar} alt={row?.name} width={500} height={500} className="w-[48px] h-[48px] rounded-full object-cover" />
-        //         </div>
-        //     )
-        // },
+        {
+            label: "Image",
+            accessor: "image",
+            width: "80px",
+            formatter: (_: any, row: any) => (
+                <div className='flex items-center gap-2 p-4'>
+                    <Image src="/images/user.png" alt={row?.name} width={500} height={500} className="w-[48px] h-[48px] rounded-full object-cover" />
+                </div>
+            )
+        },
         {
             label: "Mobile Number",
             accessor: "mobile_number",

@@ -58,7 +58,14 @@ export default function Sidebar() {
     const { user, handleSidebar, isSidebarOpen } = useUserContext();
     useEffect(() => {
         if (pathname) {
-            dispatch(handleMenuChange(pathname))
+            if(pathname.includes('staff_management')){
+                dispatch(handleMenuChange('/dashboard/staff_management'))
+            }
+            else if(pathname.includes('client_management')){
+                dispatch(handleMenuChange('/dashboard/client_management'))
+            }else{
+                dispatch(handleMenuChange(pathname))
+            }
         }
         console.log("Redux : ",logoutInfo)
     }, [pathname, dispatch])

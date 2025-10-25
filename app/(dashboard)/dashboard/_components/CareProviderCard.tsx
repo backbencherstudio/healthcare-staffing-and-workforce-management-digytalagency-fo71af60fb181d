@@ -14,7 +14,7 @@ export default function CareProviderCard({title,data}:{title:string,data:dataTyp
             <h3 className="text-[#383E49] text-xl font-medium leading-[30px] text-center">{title}</h3>
             <div className="grid grid-cols-3">
                 {data?.map(item =>
-                    <div className={`flex flex-col gap-2 items-center ${item?.label !== "suspended" ? "border-r border-[#F0F1F3]" : ""}`}>
+                    <div key={item?.label} className={`flex flex-col gap-2 items-center ${item?.label !== "suspended" ? "border-r border-[#F0F1F3]" : ""}`}>
                         <div style={{ color: item?.color }}>
                             {item?.icon}
                         </div>

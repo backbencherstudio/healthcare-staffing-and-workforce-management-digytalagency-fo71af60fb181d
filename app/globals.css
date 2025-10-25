@@ -5,6 +5,9 @@
 
 :root {
   --sidebar-width: 100px;
+  --imageWidth: 200px;
+  --imageHeight: 50px;
+  --imageMaxWidth: 0px;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -88,6 +91,14 @@
 @media (min-width: 1280px) {
   :root {
     --sidebar-width: 380px;
+    --imageMaxWidth: 280px;
+    --imageWidth: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root{
+    --imageWidth: 20px;
   }
 }
 
@@ -129,6 +140,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }

@@ -32,36 +32,38 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         id: '',
         name: '',
         email: '',
-        role: ''
+        role: '',
+        image: ''
     });
     const logoutInfo = useSelector((state: any) => state?.sidebarLogoutSlice)
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [loading, setLoading] = useState(true);
     const [showSearchBar, setShowSearchBar] = useState(false);
     const dispatch = useDispatch();
-    // const getMe = async () => {
-    //     try {
-    //         const res = await UserService.me();
-    //         if (res?.data?.success) {
-    //             router.replace('/dashboard')
-    //             setUser(res?.data?.user)
-    //         } else {
-    //             router.replace('/login')
-    //         }
-    //     } catch (err) {
-    //         console.log(err);
-    //         router.replace('/login')
-    //     }finally{
-    //         setLoading(false);
-    //     }
-    // }
+    const getMe = async () => {
+        try {
+            const res = await UserService.me();
+            console.log(res);
+            if (res?.statusText === "OK") {
+                // router.replace('/dashboard')
+                setUser(res?.data)
+            } else {
+                router.replace('/login')
+            }
+        } catch (err) {
+            console.log(err);
+            router.replace('/login')
+        }finally{
+            setLoading(false);
+        }
+    }
     useEffect(() => {
-        // const token = CookieHelper?.get({key:"token"});
+        const token = CookieHelper?.get({key:"token"});
         // if(!token){
         //     router?.replace('/login');
         //     return;
         // }
-        // getMe();
+        getMe();
         // router.replace('/dashboard')
         setLoading(false);
     }, [])

@@ -1,8 +1,8 @@
 'use client'
 
-import { UserService } from "@/userservice/user.service";
+import DynamicTable from "@/helper/DynamicTable";
 import { useEffect, useState } from "react";
-import StaffTable from "../_components/staffManagement/StaffTable";
+// import avatar from '@/public/images/avatar.png';
 import Image from "next/image";
 import { documentIcon } from "@/public/SVG/DashbaordSvg";
 import { openEye } from "@/public/SVG/DashbaordSvg";
@@ -16,94 +16,32 @@ import {
 } from "@/components/ui/select";
 import { useRouter } from "next/navigation";
 
-type clientStatusType = {
+type staff = {
     id: string;
-    key: string;
-    title: string;
-    count: number;
+    name: string;
+    mobile_number: string;
+    email: string;
+    primary_role: string;
+    right_to_work_status: string;
+    dob: string;
+    account_status: string;
 }
 
-export type client={
-    id?: string;
-    name?: string;
-    mobile_number?: string;
-    email?: string;
-    main_service_type?: string;
-    license_paper?: string;
-    registration_number?: string;
-    vat_taxid?: string;
-    account_status?: string;
-    createdAt?: string;
-    rating?: string;
-    image?: string;
-    primary_contact?:{
-        manager: string;
-        deputy: string;
-        contact: string;
-        postcode: string;
-      },
-      employment?:{
-        status: string;
-        map: string;
-        transport: string;
-      },
-      bonus?: string[];
-}
 
-const colors = {
-    total: "#1570EF",
-    pending:"#E19133",
-    active:"#845EBC",
-    suspended:"#F36960"
-}
-
-// Define the type for colors keys
-type ColorKey = keyof typeof colors;
-
-export default function Page() {
-    const [clientStatus, setClientStatus] = useState<clientStatusType[]>([]);
-    const [staffData,setStaffData] = useState<client[]>([]);
-    const router = useRouter();
+export default function ClientTable({ data }: { data: staff[] }) {
     const [selectedAccountStatus,setSelectedAccountStatus] = useState('');
     const handleAccountStatusChange=(value:string)=>{
         setSelectedAccountStatus(value);
     }
-    const fetchData = async () => {
-        try {
-            const res = await UserService?.getClientStatus();
-            console.log(res);
-            if (res?.statusText === "OK") {
-                setClientStatus(res?.data);
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    }
-    const fetchStaffData = async () => {
-        try {
-            const res = await UserService?.getClientData();
-            if (res?.statusText === "OK") {
-                // console.log(res);
-                setStaffData(res?.data);
-            }
-        } catch (err) {
-            console.log(err);
-        }
-    }
-
-    useEffect(() => {
-        fetchData();
-        fetchStaffData();
-    }, [])
-
+    const router = useRouter();
     const columns = [
         {
-            label: "Business name",
+            label: "Name",
             accessor: "name",
             width: "160px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center gap-2 p-4'>
-                    <span className='text-[#111827] text-nowrap font-normal text-base leading-[24px]'>
+                    <span className='text-[#111827] font-normal text-base leading-[24px]'>
                         {row.name}
                     </span>
                 </div>
@@ -115,7 +53,7 @@ export default function Page() {
             width: "80px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center gap-2 p-4'>
-                    <Image src="/images/avatar.png" alt={row?.name} width={500} height={500} className="w-[48px] h-[48px] rounded-full object-cover" />
+                    <Image src="/images/user.png" alt={row?.name} width={500} height={500} className="w-[48px] h-[48px] rounded-full object-cover" />
                 </div>
             )
         },
@@ -144,50 +82,50 @@ export default function Page() {
             )
         },
         {
-            label: "Main Service Type",
-            accessor: "main_service_type",
+            label: "Primary Role",
+            accessor: "primary_role",
             width: "160px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center gap-2 p-4'>
                     <span className='text-[#111827] text-base font-normal leading-[24px]'>
-                        {row.main_service_type}
+                        {row.primary_role}
                     </span>
                 </div>
             )
         },
         {
-            label: "license paper",
-            accessor: "license_paper",
+            label: "CV",
+            accessor: "cv",
             width: "100px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center gap-2 p-4'>
                     <button type="button" className="cursor-pointer">
                         {documentIcon}
                     </button>
-                    <h3 className="text-[#2F3131] font-medium text-nowrap">license paper</h3>
+                    <h3 className="text-[#2F3131] font-medium">CV</h3>
                 </div>
             )
         },
         {
-            label: "Registration Number",
-            accessor: "registration_number",
+            label: "Right to Work Status",
+            accessor: "right_to_work_status",
             width: "160px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center gap-2 p-4'>
                     <span className='text-[#111827] text-base font-normal leading-[24px]'>
-                        {row.registration_number}
+                        {row.right_to_work_status}
                     </span>
                 </div>
             )
         },
         {
-            label: "VAT/Tax ID",
-            accessor: "vat_taxid",
+            label: "Date of Birth",
+            accessor: "dob",
             width: "160px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center gap-2 p-4'>
-                    <span className='text-[#111827] text-nowrap text-base font-normal leading-[24px]'>
-                        {row.vat_taxid}
+                    <span className='text-[#111827] text-base font-normal leading-[24px]'>
+                        {row.dob}
                     </span>
                 </div>
             )
@@ -223,7 +161,7 @@ export default function Page() {
             width: "160px",
             formatter: (_: any, row: any) => (
                 <div className='flex items-center justify-end gap-2 p-4'>
-                    <button type="button" onClick={()=>router.push(`/dashboard/client_management/client-${row?.id}`)} className="p-[10px] flex items-center justify-center leading-0 bg-[#FEB000] rounded-lg text-white cursor-pointer">
+                    <button type="button" onClick={()=>router.push(`/dashboard/staff_management/${row?.id}`)} className="p-[10px] flex items-center justify-center leading-0 bg-[#FEB000] rounded-lg text-white cursor-pointer">
                         {openEye}
                     </button>
                     <button type="button" className="p-[10px] flex items-center justify-center leading-0 bg-[#E03137] rounded-lg text-white cursor-pointer">
@@ -235,24 +173,10 @@ export default function Page() {
     ]
 
     return (
-        <div className="bg-white w-full h-full p-6 space-y-6">
-            <h3 className="text-[#383E49] font-semibold leading-[30px] text-xl">Care Service Clients (2)</h3>
-            <div className={`bg-[#F4F8FE] px-4 py-6 rounded-lg grid grid-cols-4`}>
-                {clientStatus?.map(staff =>
-                    <div 
-                        key={staff.id}
-                        className={`${staff?.id !== "4"?"border-r border-[#CFD2D2]":""} ${staff?.id !== "1"?"px-[20px] xl:px-[55px]":""} space-y-3`}
-                    >
-                        <h3 className="font-medium leading-[24px]" style={{color: colors[staff?.key as ColorKey]}}>{staff?.title}</h3>
-                        <h2 className="text-[#5D6679] font-medium leading-[42px] text-[28px]">{staff?.count}</h2>
-                    </div>
-                )}
-            </div>
-            <div className="border border-[#CFD2D2] rounded-lg p-3">
-                <StaffTable data={staffData} columns={columns} title="All Care Provider"/>
-            </div>
-            <div className="pb-[20px]">
-
+        <div className="space-y-6">
+            <h3 className="text-[#383E49] font-medium leading-[30px] text-xl">All Staff</h3>
+            <div>
+                <DynamicTable data={data} columns={columns} header={{ bg: '#FAFAFA', padding: '16px', text: '#687588' }} tableMinWidth="100px" />
             </div>
         </div>
     )

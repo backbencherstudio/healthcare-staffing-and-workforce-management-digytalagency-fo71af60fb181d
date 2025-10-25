@@ -10,14 +10,17 @@ const roboto = Roboto({
 
 const data = [
     {
+        id: 1,
         title: `${1} Documents expiring soon`,
         value: 0
     },
     {
+        id:2,
         title: `${0} Open shifts today`,
         value: 0
     },
     {
+        id: 3,
         title: `${1} Staff below 3 star rating`,
         value: 0
     },
@@ -29,7 +32,7 @@ export default function MetricsOverview() {
             <h3 className={`capitalize text-black font-semibold leading-[30px] text-xl ${roboto?.variable} font-sans`}>Key Metrics Overview</h3>
             <div className="xl:grid grid-cols-3 flex flex-col gap-4">
                 {data?.map(item =>
-                    <MatrixOverviewCard data={item} />
+                    <MatrixOverviewCard data={item} key={item?.id}/>
                 )}
             </div>
         </div>

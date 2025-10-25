@@ -1,13 +1,12 @@
 {
-  "users": [
-    {
-      "id": 1,
-      "email": "admin@gmail.com",
-      "password": "12345678",
-      "name": "Mathias W.",
-      "role": "Store Manager"
-    }
-  ],
+  "me": {
+    "id": 1,
+    "email": "admin@gmail.com",
+    "password": "12345678",
+    "name": "Mathias W.",
+    "role": "Store Manager",
+    "image": "/images/avatar.png"
+  },
   "dashbaordStats": [
     {
       "label": "active_hcps",
@@ -52,7 +51,33 @@
       "count": 5
     }
   ],
-  "staffData":[
+  "clientStatus": [
+    {
+      "id": "1",
+      "key": "total",
+      "title": "Total care provider",
+      "count": 14
+    },
+    {
+      "id": "2",
+      "key": "pending",
+      "title": "Pending care provider",
+      "count": 868
+    },
+    {
+      "id": "3",
+      "key": "active",
+      "title": "Active care provider",
+      "count": 5
+    },
+    {
+      "id": "4",
+      "key": "suspended",
+      "title": "Suspended care provider",
+      "count": 5
+    }
+  ],
+  "staffData": [
     {
       "id": "1",
       "name": "John Smith",
@@ -61,17 +86,45 @@
       "primary_role": "Nurse",
       "right_to_work_status": "Verified",
       "dob": "1985-03-15",
-      "account_status": "active"
+      "account_status": "suspended",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "2",
-      "name": "Sarah Johnson",
-      "mobile_number": "+1-555-0102",
-      "email": "sarah.johnson@example.com",
-      "primary_role": "Doctor",
-      "right_to_work_status": "Pending Verification",
-      "dob": "1978-07-22",
-      "account_status": "pending"
+      "name": "John Smith",
+      "mobile_number": "+1-555-0101",
+      "email": "john.smith@example.com",
+      "primary_role": "Nurse",
+      "right_to_work_status": "Verified",
+      "dob": "1985-03-15",
+      "account_status": "active",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "3",
@@ -81,7 +134,21 @@
       "primary_role": "Physician Assistant",
       "right_to_work_status": "Verified",
       "dob": "1990-11-30",
-      "account_status": "active"
+      "account_status": "active",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "4",
@@ -91,7 +158,21 @@
       "primary_role": "Lab Technician",
       "right_to_work_status": "Not Verified",
       "dob": "1992-05-14",
-      "account_status": "suspended"
+      "account_status": "suspended",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "5",
@@ -101,7 +182,21 @@
       "primary_role": "Radiologist",
       "right_to_work_status": "Verified",
       "dob": "1983-09-08",
-      "account_status": "active"
+      "account_status": "active",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "6",
@@ -111,7 +206,21 @@
       "primary_role": "Pharmacist",
       "right_to_work_status": "Pending Verification",
       "dob": "1988-12-25",
-      "account_status": "pending"
+      "account_status": "pending",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "7",
@@ -121,7 +230,21 @@
       "primary_role": "Surgeon",
       "right_to_work_status": "Verified",
       "dob": "1975-02-18",
-      "account_status": "active"
+      "account_status": "active",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "8",
@@ -131,7 +254,21 @@
       "primary_role": "Nurse Practitioner",
       "right_to_work_status": "Verified",
       "dob": "1987-06-11",
-      "account_status": "active"
+      "account_status": "active",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "9",
@@ -141,7 +278,21 @@
       "primary_role": "Anesthesiologist",
       "right_to_work_status": "Expired",
       "dob": "1980-04-03",
-      "account_status": "suspended"
+      "account_status": "suspended",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
     },
     {
       "id": "10",
@@ -151,7 +302,324 @@
       "primary_role": "Medical Assistant",
       "right_to_work_status": "Pending Verification",
       "dob": "1995-08-29",
-      "account_status": "pending"
+      "account_status": "pending",
+      "image": "/images/user.png",
+      "role": "Senior HCA / HCA / Carer",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "compliance_docs": {
+        "exp": "2026-03-15",
+        "pin_soe": "A1234567",
+        "nvq": "BSc Nursing"
+      },
+      "employment": {
+        "max_hours": "48",
+        "passport_photo": "/images/user.png"
+      },
+      "type": "staff"
+    }
+  ],
+  "clientData": [
+    {
+      "id": "1",
+      "name": "Tech Solutions Ltd",
+      "mobile_number": "+1-555-0101",
+      "email": "contact@techsolutions.com",
+      "main_service_type": "IT Consulting",
+      "license_paper": "BUS-LIC-2023-001",
+      "registration_number": "REG-789456123",
+      "vat_taxid": "VAT-789456123001",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "2",
+      "name": "Green Leaf Organic Store",
+      "mobile_number": "+1-555-0102",
+      "email": "info@greenleaforganic.com",
+      "main_service_type": "Retail - Organic Foods",
+      "license_paper": "BUS-LIC-2023-002",
+      "registration_number": "REG-789456124",
+      "vat_taxid": "VAT-789456124002",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "3",
+      "name": "Urban Builders Construction",
+      "mobile_number": "+1-555-0103",
+      "email": "projects@urbanbuilders.com",
+      "main_service_type": "Construction Services",
+      "license_paper": "BUS-LIC-2023-003",
+      "registration_number": "REG-789456125",
+      "vat_taxid": "VAT-789456125003",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30",
+        "50"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "4",
+      "name": "Creative Minds Marketing",
+      "mobile_number": "+1-555-0104",
+      "email": "hello@creativeminds.com",
+      "main_service_type": "Digital Marketing",
+      "license_paper": "BUS-LIC-2023-004",
+      "registration_number": "REG-789456126",
+      "vat_taxid": "VAT-789456126004",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "5",
+      "name": "Precision Auto Repair",
+      "mobile_number": "+1-555-0105",
+      "email": "service@precisionauto.com",
+      "main_service_type": "Automotive Services",
+      "license_paper": "BUS-LIC-2023-005",
+      "registration_number": "REG-789456127",
+      "vat_taxid": "VAT-789456127005",
+      "account_status": "suspended",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "6",
+      "name": "Blue Ocean Logistics",
+      "mobile_number": "+1-555-0106",
+      "email": "shipping@blueoceanlogistics.com",
+      "main_service_type": "Logistics & Shipping",
+      "license_paper": "BUS-LIC-2023-006",
+      "registration_number": "REG-789456128",
+      "vat_taxid": "VAT-789456128006",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "7",
+      "name": "Sunrise Café & Bistro",
+      "mobile_number": "+1-555-0107",
+      "email": "reservations@sunrisebistro.com",
+      "main_service_type": "Food & Beverage",
+      "license_paper": "BUS-LIC-2023-007",
+      "registration_number": "REG-789456129",
+      "vat_taxid": "VAT-789456129007",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "8",
+      "name": "Wellness First Clinic",
+      "mobile_number": "+1-555-0108",
+      "email": "appointments@wellnessfirst.com",
+      "main_service_type": "Healthcare Services",
+      "license_paper": "BUS-LIC-2023-008",
+      "registration_number": "REG-789456130",
+      "vat_taxid": "VAT-789456130008",
+      "account_status": "pending",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "9",
+      "name": "Smart Home Installers",
+      "mobile_number": "+1-555-0109",
+      "email": "install@smarthome.com",
+      "main_service_type": "Smart Technology Installation",
+      "license_paper": "BUS-LIC-2023-009",
+      "registration_number": "REG-789456131",
+      "vat_taxid": "VAT-789456131009",
+      "account_status": "active",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
+    },
+    {
+      "id": "10",
+      "name": "Eco Clean Services",
+      "mobile_number": "+1-555-0110",
+      "email": "bookings@ecoclean.com",
+      "main_service_type": "Commercial Cleaning",
+      "license_paper": "BUS-LIC-2023-010",
+      "registration_number": "REG-789456132",
+      "vat_taxid": "VAT-789456132010",
+      "account_status": "inactive",
+      "createdAt": "2025-10-12",
+      "rating": "4.5",
+      "primary_contact": {
+        "manager": "Emily white",
+        "deputy": "Frank green",
+        "contact": "0161-555-1001",
+        "postcode": "M15 4NW"
+      },
+      "employment": {
+        "status": "pinned",
+        "map": "https://map.google.com",
+        "transport": "https://www.google.com"
+      },
+      "bonus": [
+        "10",
+        "20",
+        "30"
+      ],
+      "image": "/images/user.png"
     }
   ],
   "certificates": [
@@ -159,61 +627,71 @@
       "name": "BLS Healthcare Provider",
       "printDate": "2024-03-15",
       "expiryDate": "2026-03-15",
-      "status": "Verified"
+      "status": "Verified",
+      "file":"/images/user.png"
     },
     {
       "name": "ACLS Provider",
       "printDate": "2023-12-01",
       "expiryDate": "2025-12-01",
-      "status": "Expired"
+      "status": "Expired",
+      "file":"/images/user.png"
     },
     {
       "name": "PALS Certification",
       "printDate": "2024-02-20",
       "expiryDate": "2026-02-20",
-      "status": "Pending Verification"
+      "status": "Pending Verification",
+      "file":"/images/user.png"
     },
     {
       "name": "RN State License",
       "printDate": "2024-01-10",
       "expiryDate": "2025-12-31",
-      "status": "Active"
+      "status": "Active",
+      "file":"/images/user.png"
     },
     {
       "name": "Infection Control Certificate",
       "printDate": "2023-11-05",
       "expiryDate": "2024-11-05",
-      "status": "Expiring Soon"
+      "status": "Expiring Soon",
+      "file":"/images/user.png"
     },
     {
       "name": "Telemetry Certification",
       "printDate": "2024-04-12",
       "expiryDate": "2026-04-12",
-      "status": "Approved"
+      "status": "Approved",
+      "file":"/images/user.png"
     },
     {
       "name": "Wound Care Specialist",
       "printDate": "2022-08-30",
       "expiryDate": "2024-08-30",
-      "status": "Suspended"
+      "status": "Suspended",
+      "file":"/images/user.png"
     },
     {
       "name": "Oncology Nursing Certification",
       "printDate": "2024-03-25",
       "expiryDate": "2026-03-25",
-      "status": "In Review"
+      "status": "In Review",
+      "file":"/images/user.png"
     },
     {
       "name": "Medication Administration",
       "printDate": "2023-10-15",
       "expiryDate": "2025-10-15",
-      "status": "Active"
+      "status": "Active",
+      "file":"/images/user.png"
     },
     {
       "name": "Emergency Department Nursing",
       "printDate": "2024-01-08",
       "expiryDate": "2025-01-08",
-      "status": "Renewal Required"
+      "status": "Renewal Required",
+      "file":"/images/user.png"
     }
   ]
 }

@@ -72,7 +72,7 @@ export default function Page() {
                 </div>
                 <div className="gap-6 grid h-fit min-[1500px]:h-auto min-[1500px]:grid-rows-2 sm:grid-cols-2 min-[1500px]:grid-cols-1 lg:grid-cols-1">
                     {notificationData?.map(item=>
-                        <DashboardNotificationCard data={item}/>
+                        <DashboardNotificationCard data={item} key={item?.type}/>
                     )}
                 </div>
             </div>

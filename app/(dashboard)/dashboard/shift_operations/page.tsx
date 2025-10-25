@@ -1,7 +1,7 @@
 export default function page(){
     return(
         <div>
-            Shift management
+            Shift operations
         </div>
     )
 }
